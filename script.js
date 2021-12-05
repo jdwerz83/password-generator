@@ -5,8 +5,8 @@
 var generateBtn = document.querySelector("#generate");
 
 function generatePassword(){
-  var lowerCase = 'abcdefghijklmnopqrstuvwxyz';
   var upperCase = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
+  var lowerCase = 'abcdefghijklmnopqrstuvwxyz';
   var numerals = '0123456789';
   var special = '/?.>,<;:}{}][\|+=_-)(*&^%$#@!';
   var allTheThings = '';
@@ -14,40 +14,39 @@ function generatePassword(){
 
   var passLength = prompt('Password length between 8 and 128 characters?')
 
-  if (passLength >= 8 && passLength <= 128) {
-    console.log(passLength)
+  if (passLength >= 8 && passLength <= 128) {   
   } else {
     alert('Please pick a number 8 or greater, but no more than 128')
     return '';
   }
 
-  var watLowerCase = confirm('Use lower case characters?')
   var watUpperCase = confirm('Use upper case characters?')
+  var watLowerCase = confirm('Use lower case characters?')
   var watNumerals = confirm('Use numerals?')
   var watSpecial = confirm('Use special characters?')
+  
+  if (watUpperCase) {
+    allTheThings += upperCase
+  }
+  // console.log(watUpperCase)
 
   if (watLowerCase) {
     allTheThings += lowerCase
   }
-  console.log(watLowerCase)
-
-  if (watUpperCase) {
-    allTheThings += upperCase
-  }
-  console.log(watUpperCase)
+  // console.log(watLowerCase)
 
   if (watNumerals) {
     allTheThings += numerals
   }
-  console.log(watNumerals)
+  // console.log(watNumerals)
 
   if (watSpecial) {
     allTheThings += special
   }
-  console.log(watSpecial)
+  // console.log(watSpecial)
 
   if (
-    !watLowerCase && !watUpperCase && !watNumerals && !watSpecial
+    !watUpperCase && !watLowerCase && !watNumerals && !watSpecial
   ) {
     return alert('Help me to help you...');  
   }
