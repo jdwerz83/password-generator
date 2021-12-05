@@ -6,9 +6,9 @@ var generateBtn = document.querySelector("#generate");
 
 function generatePassword(){
   var lowerCase = 'abcdefghijklmnopqrstuvwxyz';
-  var upperCase = 'ABCDEFGHIJKLMNOPRSTUVWXYZ';
-  var numerals = '1234567890';
-  var special = '~!@#$%^&*()_+{}:?><;.,';
+  var upperCase = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
+  var numerals = '0123456789';
+  var special = '/?.>,<;:}{}][\|+=_-)(*&^%$#@!';
   var allTheThings = '';
   var password = '';
 
@@ -49,7 +49,7 @@ console.log(watSpecial)
 if (
   !watLowerCase && !watUpperCase && !watNumerals && !watSpecial
 ) {
-  return alert('Help me to help you');  
+  return alert('Help me to help you...');  
 }
 
 for (let i = 0; i < passLength; i++) {
